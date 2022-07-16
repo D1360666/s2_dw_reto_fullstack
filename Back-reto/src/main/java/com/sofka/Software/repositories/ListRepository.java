@@ -1,5 +1,6 @@
 package com.sofka.Software.repositories;
 
+import com.sofka.Software.dto.DTOList;
 import com.sofka.Software.models.ListModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;

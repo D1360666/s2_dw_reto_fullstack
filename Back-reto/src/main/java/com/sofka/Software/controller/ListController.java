@@ -1,5 +1,6 @@
 package com.sofka.Software.controller;
 
+import com.sofka.Software.dto.DTOList;
 import com.sofka.Software.models.ListModel;
 import com.sofka.Software.services.ListService;
 //import lombok.extern.slf4j.Slf4j;
@@ -16,17 +17,17 @@ public class ListController {
         private ListService listRepository;
 
         @GetMapping(value = "/listas")
-        public Iterable<ListModel> list(){
+        public Iterable<DTOList> list(){
             return listRepository.list();
         }
 
         @PostMapping(value="/listas")
-        public ListModel saveLista(@RequestBody ListModel lista){
+        public DTOList saveLista(@RequestBody DTOList lista){
             return this.listRepository.createList(lista);
         }
 
         @PostMapping(value = "/task")
-        public ListModel createList(@RequestBody ListModel lista){
+        public DTOList createList(@RequestBody DTOList lista){
             return listRepository.createList(lista);
         }
 
