@@ -1,5 +1,5 @@
 //Declaracion de variables
-/*---->const d = document,
+const d = document,
     $title = d.getElementById("nombre-lista"),
     $crear = d.getElementById("crear"),
     body = d.querySelector('.tbody1'),
@@ -112,14 +112,14 @@ body.addEventListener("click", (e) => {
     /**
      * eliminar subtarea
     */
-   /*-------------------------------- if (e.target.classList[0] == "eliminar") {
+    if (e.target.classList[0] == "eliminar") {
         eliminarSubTarea(e.target.parentElement.parentElement.children[0].textContent)
     }
     /**
      * editar subtarea , al pulsar el boton editar , muestra en el input con nombre de la tare actual
      * me permite 
     */
-    /*-----------------------------------if (e.target.classList[0] == "editar") {
+    if (e.target.classList[0] == "editar") {
         e.preventDefault()
         subtarea.id = e.path[0].value
         subtarea.name = e.path[2].children[1].textContent;
@@ -136,7 +136,7 @@ body.addEventListener("click", (e) => {
     /**
      * function validar , verifica el estado del check para cambiar el estado del boton editar
      */
-    /*---------------------------------------------if (e.target.classList[0] == "validar") {
+    if (e.target.classList[0] == "validar") {
         console.log(e.path[2].children[3].children[0].value);
         let btnvalidar = d.getElementById('editar' + e.path[2].children[3].children[0].value)
         let check = d.getElementById('validar' + e.path[2].children[3].children[0].value).checked
@@ -193,52 +193,10 @@ async function eliminarSubTarea(id) {
         method: "DELETE",
         
     mostrarList()
-    }
-}
+}}
 /**
  * Editar sub lista 
  * @param {*} id1 
  * @param {*} id2 
  * @param {*} nombre 
  */
-//import Task from "./task"
-//import TaskList from "../tasklist"
-
-const d = document,
-$form = d.querySelector(".form-task"),
-$template = d.getElementById("crud-template"),
-$fragment = d.createDocumentFragment();
-
-const getAll = async () => {
-    try{
-        /*
-            Acá va el código de lo que vamos a consumir al cargar la web, si existen listas.
-        */
-    }catch(err){
-        let message = err.statusText||"Ocurrió un error"
-        $table.insertAdjacentHTML("afterend", `<p><b>Error ${err.status}: ${message}</b></p>`)
-    }
-}
-
-d.addEventListener("DOMContentLoaded", getAll)
-
-d.addEventListener("submit", e =>{
-    alert("asd")
-    if(e.target===$form){
-        e.preventDefault()
-        alert("asd")
-        if(!e.target.id.value){
-            let $clone = d.importNode($template, true)
-            $fragment.appendChild($clone)
-            alert("asd")
-        }
-    }
-    
-})
-
-
-
-
-
-
-
