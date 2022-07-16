@@ -41,4 +41,6 @@ public class ListService {
     public ListModel get(Long id){
         return listRepository.findById(id).orElseThrow();
     }
+
+
 }

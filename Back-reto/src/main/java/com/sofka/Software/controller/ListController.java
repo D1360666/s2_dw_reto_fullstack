@@ -20,6 +20,11 @@ public class ListController {
             return listRepository.list();
         }
 
+        @PostMapping(value="/listas")
+        public ListModel saveLista(@RequestBody ListModel lista){
+            return this.listRepository.createList(lista);
+        }
+
         @PostMapping(value = "/task")
         public ListModel createList(@RequestBody ListModel lista){
             return listRepository.createList(lista);

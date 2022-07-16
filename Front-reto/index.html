@@ -8,18 +8,52 @@
 </head>
 
 <body>
-    <div id="principal" class="container mt-4 shadow-lg p-3 mb-5 bg-body rounded">
-        <h1 >To-Do-List</h1>
-        <div class="input-group mb-3">
+    <section id="principal" class="principal">
+        <h1>To-Do-List</h1>
+        <article class="ingreso">
+            <form class="form-task">
                 <input id="inputTarea" class="form-control me-sm-2" type="text" placeholder="¿Lista de To-Do?">
                 <button  class="btn btn-success my-2 my-sm-0" id="crear" type="submit">Crear</button>
-        </div>
-        <section class="tbody1">
+            </form>
+                
+        </article>
+        <h2>Listas de tareas</h2>
+        <article class="listasTareas">
+
+        </article>
+    </section>
+    <template id="crud-template">
+            <input type="text" class="input-task" placeholder="Ingrese Tarea">
+            <button class="add-task">Crear</button>
+        
+        <section class="lista">
+            <article class="tareas">
+                <table class="crud-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>TAREA</th>
+                            <th>COMPLETADO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="idTask"></td>
+                            <td class="task"></td>
+                            <td><input class="crud-check" type="checkbox"></td>
+                            <td>
+                                <button class="edit">Editar</button>
+                                <button class="delete">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
 
         </section>
-    </div>
-    
+
+    </template>
 </body>
-<script type="module" src="./js/list.js"></script>
+<script src="./js/main.js"></script>
 
 </html>

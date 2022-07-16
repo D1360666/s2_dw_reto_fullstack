@@ -9,4 +9,5 @@ import org.springframework.data.repository.CrudRepository;
  * Implementa JpaRepository en lugar de CrudRepository !!Important¡¡¡¡
  * */
 public interface ListRepository extends JpaRepository<ListModel, Long > {
+
 }
