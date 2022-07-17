@@ -23,8 +23,8 @@ public class ListJpaRepositoryTest {
 
     @Test
     public void createList(){
-        List <DTOListTask> tareas = new ArrayList();
-        DTOList lista = new DTOList("lista1", tareas);
+        List <ListTaskModel> tareas = new ArrayList();
+        ListModel lista = new ListModel("lista1", tareas);
 
         listRepository.save(lista);
         listRepository.flush();

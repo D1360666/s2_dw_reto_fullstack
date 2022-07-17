@@ -1,6 +1,9 @@
 package com.sofka.Software.models;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 
@@ -14,7 +17,7 @@ public class ListTaskModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private Long id;
-    @Column(unique = true, nullable = false)
+    @Column(unique = false, nullable = false)
     private Boolean completed;
     @Column(unique = true, nullable = false)
     private String name;
@@ -23,18 +26,19 @@ public class ListTaskModel {
      * relacion muchos a uno , implementa la relacion con la clase primaria lista
      */
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "listTask_id", nullable = false)
-
-    @JsonBackReference
+    @JoinColumn(name = "listaid", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    //@JsonBackReference
+    @JsonIgnore
     private ListModel listaid;
 
     public ListTaskModel() {
+        super();
     }
 
-    public ListTaskModel(Boolean completed, String name, ListModel listaid) {
+    public ListTaskModel(Boolean completed, String name) {
         this.completed = completed;
         this.name = name;
-        this.listaid = listaid;
     }
 
     public Long getId() {

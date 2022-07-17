@@ -15,7 +15,7 @@ public class ListModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private Long id;
-    @Column(unique = true, nullable = false)
+    @Column(unique = false, nullable = false)
     private String name;
     /**
      * anotacion OneToMany(uno a muchos) permite crear la relacion con la tabla secundaria
